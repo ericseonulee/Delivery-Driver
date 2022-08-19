@@ -14,11 +14,13 @@ public class Delivery : MonoBehaviour {
 
         
 
-        if (other.tag == "Package") {
+        if (!hasPackage && other.tag == "Package") {
             Debug.Log("Package picked up.");
             hasPackage = true;
 
             int randomNumber = Random.Range(0, customers.Length -1);
+            Debug.Log("customers.Length: " + customers.Length);
+            Debug.Log(randomNumber);
             activeCustomer = customers[randomNumber];
             activeCustomer.tag = "Active Customer";
             activeCustomer.GetComponent<SpriteRenderer>().color = Color.red;
@@ -29,6 +31,7 @@ public class Delivery : MonoBehaviour {
         if (activeCustomer && hasPackage && other.tag == "Active Customer") {
             Debug.Log("Package Delivered!");
             activeCustomer.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            activeCustomer.tag = "Customer";
             hasPackage = false;
         }
     }
