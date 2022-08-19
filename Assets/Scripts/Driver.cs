@@ -26,19 +26,5 @@ public class Driver : MonoBehaviour
 
         transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, moveAmount, 0);
-
-        // if (transform.position.y >= 4.7f) {
-        //     transform.position = new Vector3(transform.position.x, 4.7f, transform.position.z);
-        // }
-        // else if (transform.position.y <= -4.7f) {
-        //     transform.position = new Vector3(transform.position.x, -4.7f, transform.position.z);
-        // }
-
-        // if (transform.position.x >= 9.5f) {
-        //     transform.position = new Vector3(-9.5f, transform.position.y, transform.position.z);
-        // }
-        // else if (transform.position.x <= -9.5f) {
-        //     transform.position = new Vector3(9.5f, transform.position.y, transform.position.z);
-        // }
     }
 }
